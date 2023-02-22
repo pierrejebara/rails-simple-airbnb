@@ -1,0 +1,26 @@
+<div>
+  <div id = "banner">
+  </div>
+  <div>
+    <div id ="info">
+      <h1 id="name"><%= @flat.name %></h2>
+      <p id="address" ><%= @flat.address %></p>
+    </div>
+    <div id="more">
+      <h2> A bit more about this flat...</h1>
+      <p ><%= @flat.description %></p>
+      <div class ="more-info">
+          <p id="people"><i class="fa-solid fa-person"></i>  <%= @flat.number_of_guests %></p>
+          <p ><i class="fa-solid fa-euro-sign"></i> <%= @flat.price_per_night%>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to "Back to Flats", flats_path %>
+  <%= link_to "Delete",
+    flat_path(@flat),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+
+</div>
